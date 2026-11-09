@@ -1,0 +1,41 @@
+obj_id: restore-e2eanswer-db781186
+answer:
+  name: restore-e2e answer
+  description: version one
+  tables:
+  - id: Credit Usage Worksheet
+    name: Credit Usage Worksheet
+  search_query: "[Uncapped Credit Usage] [Capped Credit Usage] top 10 [Timestamp].'this month' by [Username]"
+  answer_columns:
+  - name: Total Capped Credit Usage
+  - name: Total Uncapped Credit Usage
+  - name: Username
+  table:
+    table_columns:
+    - column_id: Total Capped Credit Usage
+      headline_aggregation: TABLE_AGGR
+    - column_id: Total Uncapped Credit Usage
+      headline_aggregation: SUM
+    - column_id: Username
+      headline_aggregation: COUNT_DISTINCT
+    ordered_column_ids:
+    - Username
+    - Total Uncapped Credit Usage
+    - Total Capped Credit Usage
+    client_state: ""
+    client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"Username\",\"columnProperty\": {}},{\"columnId\": \"Total Uncapped Credit Usage\",\"columnProperty\": {}},{\"columnId\": \"Total Capped Credit Usage\",\"columnProperty\": {}}]}"
+  chart:
+    type: COLUMN
+    chart_columns:
+    - column_id: Total Capped Credit Usage
+    - column_id: Total Uncapped Credit Usage
+    - column_id: Username
+    axis_configs:
+    - x:
+      - Username
+      "y":
+      - Total Uncapped Credit Usage
+      - Total Capped Credit Usage
+    client_state: ""
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"3f75fbfa-db97-4097-a6d4-1815a4468349\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Uncapped Credit Usage\"],\"isOpposite\": false}},{\"id\": \"235b074a-3617-4d72-a0e8-c193f6289490\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Capped Credit Usage\"],\"isOpposite\": true}},{\"id\": \"21109b0d-4e99-458b-9819-9b5f5348941e\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Username\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Uncapped Credit Usage\",\"color\": \"#48D1E0\"},{\"serieName\": \"Total Capped Credit Usage\",\"color\": \"#2E75F0\"}]}"
+  display_mode: CHART_MODE
