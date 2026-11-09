@@ -1,11 +1,11 @@
 obj_id: restore-e2eanswer-db781186
 answer:
   name: restore-e2e answer
-  description: version two
+  description: version one
   tables:
   - id: Credit Usage Worksheet
     name: Credit Usage Worksheet
-  search_query: "[Uncapped Credit Usage] [Capped Credit Usage] top 5 [Timestamp].'this month' by [Username]"
+  search_query: "[Uncapped Credit Usage] [Capped Credit Usage] top 10 [Timestamp].'this month' by [Username]"
   answer_columns:
   - name: Total Capped Credit Usage
   - name: Total Uncapped Credit Usage
