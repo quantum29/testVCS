@@ -1,7 +1,7 @@
 obj_id: restore-e2eliveboardL-706fa958
 liveboard:
   name: restore-e2e liveboard L
-  description: version two
+  description: version one
   visualizations:
   - id: Viz_1
     answer:
@@ -44,7 +44,7 @@ liveboard:
         client_state: ""
         client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"d396d8fc-d361-436f-a7c2-0137e336b2e4\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Capped Credit Usage\"],\"isOpposite\": false}},{\"id\": \"98c3d068-84fa-49f5-8469-3ebd5ae46d45\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of User GUID\"],\"isOpposite\": true}},{\"id\": \"3cfdf618-4c21-4c8c-b67d-42388787939f\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Day(Timestamp)\"]}}]}"
       display_mode: CHART_MODE
-    viz_guid: 7fc3d5e2-ed58-4d55-8653-3aa5d27d8c2f
+    viz_guid: 4e196f86-1a77-47bb-98fa-d45f37ff5c2b
   - id: Viz_2
     answer:
       name: "Billable Credits Consumed, All Time"
@@ -88,7 +88,7 @@ liveboard:
         client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"a949baa3-4a51-4775-94e5-1ee437d77ae8\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Capped Credit Usage\"],\"isOpposite\": false}},{\"id\": \"aece22ec-9461-4ca2-8d48-75c74cdda7b8\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Timestamp)\"]}}]}"
       display_mode: TABLE_MODE
     display_headline_column: Total Capped Credit Usage
-    viz_guid: dbeeabdd-daf6-4227-bd6e-f7461633cece
+    viz_guid: e216b500-2c95-443c-9b3a-c705cda7e97f
   layout:
     tiles:
     - visualization_id: Viz_1
