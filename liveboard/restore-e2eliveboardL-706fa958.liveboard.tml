@@ -1,0 +1,103 @@
+obj_id: restore-e2eliveboardL-706fa958
+liveboard:
+  name: restore-e2e liveboard L
+  description: version one
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: "Daily Usage, with Unique Users (last 30 days)"
+      description: "Capped usage, over the previous thirty days of usage"
+      tables:
+      - id: Credit Usage Worksheet
+        name: Credit Usage Worksheet
+      search_query: "[Capped Credit Usage] [Timestamp].daily [Timestamp].'last 30 days' unique count [User GUID] [Timestamp].today"
+      answer_columns:
+      - name: Day(Timestamp)
+      - name: Total Capped Credit Usage
+      - name: Unique Number of User GUID
+      table:
+        table_columns:
+        - column_id: Day(Timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Capped Credit Usage
+          headline_aggregation: TABLE_AGGR
+        - column_id: Unique Number of User GUID
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Day(Timestamp)
+        - Total Capped Credit Usage
+        - Unique Number of User GUID
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"Day(Timestamp)\",\"columnProperty\": {}},{\"columnId\": \"Total Capped Credit Usage\",\"columnProperty\": {}},{\"columnId\": \"Unique Number of User GUID\",\"columnProperty\": {}}]}"
+      chart:
+        type: LINE_COLUMN
+        chart_columns:
+        - column_id: Day(Timestamp)
+        - column_id: Total Capped Credit Usage
+        - column_id: Unique Number of User GUID
+        axis_configs:
+        - x:
+          - Day(Timestamp)
+          "y":
+          - Total Capped Credit Usage
+          - Unique Number of User GUID
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"d396d8fc-d361-436f-a7c2-0137e336b2e4\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Capped Credit Usage\"],\"isOpposite\": false}},{\"id\": \"98c3d068-84fa-49f5-8469-3ebd5ae46d45\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of User GUID\"],\"isOpposite\": true}},{\"id\": \"3cfdf618-4c21-4c8c-b67d-42388787939f\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Day(Timestamp)\"]}}]}"
+      display_mode: CHART_MODE
+    viz_guid: 4e196f86-1a77-47bb-98fa-d45f37ff5c2b
+  - id: Viz_2
+    answer:
+      name: "Billable Credits Consumed, All Time"
+      description: Includes only credits consumed up to the per user charge cap
+      tables:
+      - id: Credit Usage Worksheet
+        name: Credit Usage Worksheet
+      search_query: "[Timestamp].monthly [User GUID] [Capped Credit Usage]"
+      answer_columns:
+      - name: Month(Timestamp)
+      - name: Total Capped Credit Usage
+      - name: User GUID
+      table:
+        table_columns:
+        - column_id: Month(Timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Capped Credit Usage
+          headline_aggregation: SUM
+        - column_id: User GUID
+          headline_aggregation: COUNT_DISTINCT
+        ordered_column_ids:
+        - Month(Timestamp)
+        - User GUID
+        - Total Capped Credit Usage
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"Month(Timestamp)\",\"columnProperty\": {}},{\"columnId\": \"User GUID\",\"columnProperty\": {}},{\"columnId\": \"Total Capped Credit Usage\",\"columnProperty\": {}}]}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(Timestamp)
+        - column_id: Total Capped Credit Usage
+        - column_id: User GUID
+        axis_configs:
+        - x:
+          - Month(Timestamp)
+          "y":
+          - Total Capped Credit Usage
+          color:
+          - User GUID
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"a949baa3-4a51-4775-94e5-1ee437d77ae8\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Capped Credit Usage\"],\"isOpposite\": false}},{\"id\": \"aece22ec-9461-4ca2-8d48-75c74cdda7b8\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(Timestamp)\"]}}]}"
+      display_mode: TABLE_MODE
+    display_headline_column: Total Capped Credit Usage
+    viz_guid: e216b500-2c95-443c-9b3a-c705cda7e97f
+  layout:
+    tiles:
+    - visualization_id: Viz_1
+      x: 0
+      "y": 0
+      height: 8
+      width: 6
+    - visualization_id: Viz_2
+      x: 6
+      "y": 0
+      height: 2
+      width: 3

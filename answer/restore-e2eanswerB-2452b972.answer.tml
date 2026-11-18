@@ -1,0 +1,47 @@
+obj_id: restore-e2eanswerB-2452b972
+answer:
+  name: restore-e2e answer B
+  description: version one
+  tables:
+  - id: Credit Usage Worksheet
+    name: Credit Usage Worksheet
+  search_query: "[Capped Credit Usage] [Timestamp].'month of year' [Timestamp].yearly unique count [User GUID]"
+  answer_columns:
+  - name: MONTH_OF_YEAR(Timestamp)
+  - name: Total Capped Credit Usage
+  - name: Unique Number of User GUID
+  - name: Year(Timestamp)
+  table:
+    table_columns:
+    - column_id: MONTH_OF_YEAR(Timestamp)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Total Capped Credit Usage
+      headline_aggregation: TABLE_AGGR
+    - column_id: Unique Number of User GUID
+      headline_aggregation: TABLE_AGGR
+    - column_id: Year(Timestamp)
+      headline_aggregation: MIN-MAX
+    ordered_column_ids:
+    - MONTH_OF_YEAR(Timestamp)
+    - Year(Timestamp)
+    - Total Capped Credit Usage
+    - Unique Number of User GUID
+    client_state: ""
+    client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"MONTH_OF_YEAR(Timestamp)\",\"columnProperty\": {}},{\"columnId\": \"Year(Timestamp)\",\"columnProperty\": {}},{\"columnId\": \"Total Capped Credit Usage\",\"columnProperty\": {}},{\"columnId\": \"Unique Number of User GUID\",\"columnProperty\": {}}]}"
+  chart:
+    type: LINE_COLUMN
+    chart_columns:
+    - column_id: MONTH_OF_YEAR(Timestamp)
+    - column_id: Total Capped Credit Usage
+    - column_id: Unique Number of User GUID
+    - column_id: Year(Timestamp)
+    axis_configs:
+    - x:
+      - MONTH_OF_YEAR(Timestamp)
+      - Year(Timestamp)
+      "y":
+      - Total Capped Credit Usage
+      - Unique Number of User GUID
+    client_state: ""
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"3c6b946c-4793-45ad-a282-aaf06a15896f\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Capped Credit Usage\"],\"isOpposite\": false}},{\"id\": \"ad865a4e-022c-402b-a63c-4c4a9900b883\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of User GUID\"],\"isOpposite\": true}},{\"id\": \"803dc20e-a787-4f9c-a895-fd60098c62a6\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"MONTH_OF_YEAR(Timestamp)\",\"Year(Timestamp)\"]}}]}"
+  display_mode: CHART_MODE
